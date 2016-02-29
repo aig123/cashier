@@ -1,0 +1,1553 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.clear{ clear:both;}
+
+/*使用LESS写CSS做皮肤*/
+
+::selection{background: #419FFF; color:#fff;}
+body{font-size: 14px; line-height: 18px; font-family:'STHeiti Light', 'STHeiti', 'SimHei', 'Microsoft YaHei', sans-serif; background: #f0f4f7; color:#666; overflow: hidden;}
+a{color:#419FFF; text-decoration: none; transition:all .2s ease-in; -webkit-transition:all .2s ease-in;}
+a:hover{color:#0d59a6;}
+input,select,textarea{outline:none;}
+
+.loading{height:100%; width: 100%; position: fixed; top:0; left:0; background: rgba(255,255,255,0); z-index: 999999; display:none;}
+.loading img{width:32px; height: 32px; position: absolute; top:50%; left:50%; margin-left:-16px; margin-top:-16px;}
+
+.loading2{width:32px; height:32px; position: fixed; top:50%; left:50%; z-index: 99999; display:none;}
+.loading2 img{width:32px; height: 32px; margin-left:-16px; margin-top:-16px;}
+
+.container{overflow: hidden;}
+
+.btn_all_msg{display: block; height:48px; width: 48px; background:url(http://www.dqstone.net/assets/admin/img/btn_msg.png) no-repeat; position: absolute; z-index: 99999; bottom:20px; right:20px;}
+.btn_all_msg .num{display: block; height:18px; width:18px; display: block; background: #f00; color:#fff; line-height: 18px; text-align: center; border-radius:50%; font-size: 14px; position: absolute; right:-2px; top:-2px; display:none;}
+.btn_all_msg .btn_mask{height:100%; width: 100%; position: absolute; top:0; left:0;}
+.btn_all_msg .msg{width:200px; position: absolute; bottom:50px; right:30px; background:rgba(21, 36, 51,0.9); padding:10px; border-radius:4px; border:1px solid #6799c7; color:#fff; line-height: 24px; display: none;}
+.btn_all_msg .msg .opt{ text-align: right; padding-top:8px;}
+.btn_all_msg .msg .opt a{display: inline-block; padding:0 6px; height:32px; line-height: 32px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; border:1px solid #e8a060; border-radius:4px; color:#fff;}
+
+.page{width:100%; height:100%; display:none;}
+.page[data-state="1"]{display: block;}
+.page_main{}
+	.page_main .sidebar{width:250px;float:left; height:100%; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat;border-right:1px solid #45515e;}
+/*.page_main .sidebar{width:250px;float:left; height:100%;border-right:1px solid #45515e;}*/
+		.page_main .sidebar .user{margin:10px 10px 10px; background:#2F6EA8; border-radius:4px; color:#fff; height: 60; overflow: hidden; border:1px solid #60a8e8;}
+		.page_main .sidebar .user .logo{float:left; width:54px; height:54px; padding:3px;}
+		.page_main .sidebar .user .logo img{height: 54px; width:54px;}
+		.page_main .sidebar .user .tab{margin-left:70px; padding:0 10px; overflow: hidden; height:60px;}
+		.page_main .sidebar .user .tab a{display:block; height:36px; width:60px; text-align: center; line-height: 36px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; border:1px solid #60a8e8; border-radius:4px; color:#fff; margin-top:11px; float:right; margin-left:6px;}
+		.tab_active{background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x!important; border:1px solid #e8a060!important;}
+		.page_main .sidebar .filter{padding:10px 0 10px 10px;}
+		.page_main .sidebar .filter .box{margin-bottom:10px;clear: both; overflow: hidden;}
+		.page_main .sidebar .filter .box a{display: block; height:40px; width:68px; border:1px solid #60a8e8; float:left; margin:0 10px 10px 0; line-height: 40px; color:#9dc0e3; text-align: center; border-radius: 4px;}
+.page_main .sidebar .filter .box a{display: block; height:40px; width:68px; border:1px solid #60a8e8; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; float:left; margin:0 10px 10px 0; line-height: 40px; color:#9dc0e3; text-align: center; border-radius: 4px;}
+		.filter_activ{border-color:#e8a060!important; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x !important; color:#fff !important;}
+		.page_main .sidebar .filter .box_switch{}
+		.page_main .sidebar .filter .box_switch a.switch{display:block; width:208px; height:40px; line-height: 40px; padding: 0 10px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; color:#9dc0e3; border-radius:4px; border:1px solid #60a8e8;}
+		.page_main .sidebar .filter .box_switch a.switch span{font-size:14px;}
+		.page_main .sidebar .filter .box_switch a.switch .switch_wrap{width:48px; height:20px; float:right; background:rgba(255,255,255,0.5); margin-top:6px; border-radius:2px; padding:4px;}
+		.page_main .sidebar .filter .box_switch a.switch .switch_mark{height:20px; width:20px; border-radius: 2px; transition:all .2s ease-in; -webkit-transition:all .2s ease-in;}
+		.page_main .sidebar .filter .box_switch a.switch[data-val='0'] .switch_mark{background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x;}
+		.page_main .sidebar .filter .box_switch a.switch[data-val='1'] .switch_mark{background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; transform:translateX(28px); -webkit-transform:translateX(28px);}
+		.page_main .sidebar .func{padding:10px 0 10px 10px;}
+		.page_main .sidebar .func .box{margin-bottom:10px;clear: both; overflow: hidden;}
+		.page_main .sidebar .func .box a{display: block; height:40px; width:108px; border:1px solid #60a8e8; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; float:left; margin:0 10px 10px 0; line-height: 40px; color:#fff; text-align: center; border-radius: 4px;}
+	.page_main .content{margin-left:251px; height:100%; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg2.png) repeat;border-left:1px solid #132231; position: relative;}
+/*.page_main .content{margin-left:251px; height:100%; border-left:1px solid #132231; position: relative;}*/
+		.page_main .content .desklist{padding:10px 0 50px 10px; overflow: hidden;}
+		/*.page_main .content .desklist .item{height:95px;  width:160px; border:1px solid #6799c7; border-radius:4px;float:left; margin:0 10px 10px 0;}*/
+.page_main .content .desklist .item{height:95px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_3.png) repeat-x; width:160px; border:1px solid #6799c7; border-radius:4px;float:left; margin:0 10px 10px 0;}
+		.page_main .content .desklist .item .hd{height:36px; line-height: 36px; font-size: 16px; color:#fff; padding-left:36px;}
+		.page_main .content .desklist .item[data-state='open'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_open.png) no-repeat 2px 2px;}
+		.page_main .content .desklist .item[data-state='null'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_null.png) no-repeat 2px 2px;}
+		.page_main .content .desklist .item[data-state='ding'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_ding.png) no-repeat 2px 2px;}
+		.page_main .content .desklist .item[data-state='yuyue'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_yuyue.png) no-repeat 2px 2px;}
+		.page_main .content .desklist .item .info{color:#bee0ff; text-align: center; line-height: 18px; font-size: 12px; padding-top:10px;}
+		.page_main .content .desklist .item[data-state='null'] .info{padding-top:20px; font-size:16px;}
+		.page_main .content .state{position: absolute; width:100%; bottom:10px; height:32px; }
+		.page_main .content .state-wrap{margin: 0 20px 0 10px; background: rgba(0,0,0,0.6); border-radius: 4px; color:#D4E3E5; height:32px; line-height: 32px; text-align: center;}
+.page_desk{background:url(http://www.dqstone.net/assets/admin/img/cashier_bg2.png) repeat;}
+	.page_desk .topbar{height:42px; padding:9px 10px; background: url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat; border-bottom: 1px solid #132231;}
+		.page_desk .topbar .btns{margin-right:160px;}
+		.page_desk .topbar .btns a{display:inline-block; height:40px; line-height: 40px; padding:0 20px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color:#fff; border-radius:4px;margin:0 5px; border:1px solid #e8a060;}
+		.page_desk .topbar .ren{float:right; width:140px; text-align:right; padding-top:2px; height:36px; padding-right:10px;}
+		.page_desk .topbar .ren .num{display: inline-block; height:34px; background: #fff; color:#333; font-size: 16px; width:34px; border:1px solid #60a8e8; border-radius: 4px; line-height: 34px; text-align: center;}
+		.page_desk .topbar .ren a{display: inline-block; height:34px; width:34px;  background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color:#fff; border-radius:50%; border:1px solid #e8a060; line-height: 34px; text-align: center;}
+	.page_desk .desk_main{border-top: 1px solid #45515e;}
+	.page_desk .desk_sidebar{height:100%; /*overflow-y:scroll;*/ overflow:hidden; width:220px; padding-right:10px; float:left; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat; border-right:1px solid #132231;}
+	.page_desk .desk_info{margin: 10px 0 10px 10px; background: #2F6EA8; border-radius: 4px; color: #fff; overflow: hidden; border: 1px solid #60a8e8;}
+		.page_desk .desk_info .btn{display: block; height:40px; border:1px solid #e8a060; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; margin:10px; line-height: 40px; color:#fff; text-align: center; border-radius: 4px;}
+		.page_desk .desk_info .name{height:36px; background: #60A8E8; line-height: 36px; text-align: center;}
+		.page_desk .desk_info .info{padding:10px;}
+		.page_desk .desk_info .it{overflow: hidden;height:32px; line-height: 32px;}
+		.page_desk .desk_info .it .text{width:50px; float:left; color:#9dc0e3; font-size:13px;}
+		.page_desk .desk_info .it .value{margin-left:50px;}
+	.page_desk .desk_order{}
+		.page_desk .desk_order .item{display: block; height:36px; line-height: 36px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; border:1px solid #60a8e8; border-radius:4px; text-align: center; margin-left:10px; color:#fff; margin-bottom:8px;}
+		.page_desk .desk_order .item[data-state="1"]{background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; border-color:#e8a060;}
+	.page_desk .order_pay{height:100%; /*overflow-y:scroll;*/ overflow:hidden; width:260px; float:right;}
+		.page_desk .order_pay .payinfo{margin-top:10px;}
+		.page_desk .order_pay .payinfo{border-top: 3px solid #894A1F; border-top-left-radius: 2px; border-top-right-radius: 2px;}
+			.page_desk .order_pay .payinfo .item{line-height: 32px; overflow: hidden;background:url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat; color:#494a45; border-top:1px dashed #BEA877;}
+			.page_desk .order_pay .payinfo .item:first-child{border-top:0;}
+			.page_desk .order_pay .payinfo .item .name{float:left; margin-left:15px; font-size: 14px;}
+			.page_desk .order_pay .payinfo .item .val{float:right; margin-right:15px;}
+			.page_desk .order_pay .payinfo .item .val .price{color:#f60;}
+			.page_desk .order_pay .payinfo .item .val .price .yuan{font-size:12px;}
+			.page_desk .order_pay .payinfo .item .val .price .n{font-size: 16px;}
+			.page_desk .order_pay .payinfo .item .val .text{color:#f60; font-size: 14px;}
+
+			.page_desk .order_pay .payinfo .item .val_remark{background: url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat; margin:0 20px; clear:both;}
+			.page_desk .order_pay .payinfo .item .val_remark textarea{height:48px; line-height: 24px; border-radius:4px; border:1px solid #ccc; width:100%; padding:4px 8px; position: relative; left:-8px;}
+
+			.page_desk .order_pay .payinfo .btns{background:url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat;border-top:1px dashed #BEA877; text-align: center; padding:8px 0;}
+			.page_desk .order_pay .payinfo .btns .btn{display: inline-block; height:40px; width:68px; border:1px solid #e8a060; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; line-height: 40px; color:#fff; text-align: center; border-radius: 4px;}
+			.page_desk .order_pay .payinfo .foot_border{height:10px; clear:both; background: url(http://www.dqstone.net/assets/admin/img/order_border.png) repeat-x;}
+		.page_desk .order_pay .pay_tab{margin-top:10px; border:1px solid #E8A060; border-radius:4px;}
+			.page_desk .order_pay .pay_tab .tab_head{height:40px; line-height: 40px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x;}
+			.page_desk .order_pay .pay_tab .tab_head a{color:#FADB8A; padding:0 12px;display: block; height:40px; float:left;}
+			.page_desk .order_pay .pay_tab .tab_head a[data-state="1"]{background: url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat; color:#A8692F;}
+			.page_desk .order_pay .pay_tab .tab_body{background:url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat; padding:0 10px 10px;}
+			.page_desk .order_pay .pay_tab .tab_body .tab_item{display: none;}
+			.page_desk .order_pay .pay_tab .tab_body .tab_item[data-state="1"]{display: block;}
+			.page_desk .order_pay .pay_tab .tab_body .ipt{}
+			.page_desk .order_pay .pay_tab .tab_body .ipt input[type="text"],.page_desk .order_pay .pay_tab .tab_body .ipt select{height:32px; line-height: 32px; width:100%; border:1px solid #ccc; border-radius:4px; text-align:center;margin-top:10px;}
+			.page_desk .order_pay .pay_tab .tab_body .btn{display:block; height:40px; border:1px solid #e8a060; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; line-height: 40px; color:#fff; text-align: center; border-radius: 4px;margin-top:10px;}
+			.page_desk .order_pay .set_money{padding-top:10px; overflow: hidden;}
+			.page_desk .order_pay .set_money a{height:36px; line-height: 36px; display: block; float:left; margin-right:4px; text-align: center;border: 1px solid #e8a060; padding:0 6px; border-radius:4px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color:#fff; margin-bottom:4px;}
+			.page_desk .order_pay .pay_tab .list_quan{}
+			.page_desk .order_pay .pay_tab .list_quan .item_quan{height:42px; line-height:42px; border-radius:4px; border:1px solid #ddd;margin-top:8px; background: #fff;}
+			.page_desk .order_pay .pay_tab .list_quan .item_quan .name{padding-left:10px;}
+			.page_desk .order_pay .pay_tab .list_quan .item_quan .opt_remove{float:right;width:42px; height:42px; display:block; line-height:42px; text-align:center;}
+			.page_desk .order_pay .pay_tab .list_quan .item_quan .opt_remove i.iconfont{font-size:24px; color:#AC6B2E;}
+			.page_desk .order_pay .pay_tab_v{overflow:hidden; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat;}
+			.page_desk .order_pay .pay_tab_v .tab_head{width:80px; float:left; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat; height:100%;}
+			.page_desk .order_pay .pay_tab_v .tab_head a{float:none;}
+			.page_desk .order_pay .pay_tab_v .tab_body{margin-left:80px;}
+	.page_desk .order_menu{height:100%; /*overflow-y:scroll;*/ overflow:hidden; margin:0 280px 0 231px;border-left:1px solid #45515e; padding-bottom:20px;}
+		.page_desk .order_menu .item{width:190px; height:70px; float:left; margin:10px 0 0 10px; position: relative; border-radius:4px; overflow: hidden; border:1px solid #60A8E8; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_4.png) repeat-x; color:#fff; padding:5px;}
+		.page_desk .order_menu .item .info{color:#B0D5F5;}
+		.page_desk .order_menu .item .info .name{height:24px; font-size: 16px;}
+		.page_desk .order_menu .item .info .price{height:24px;}
+		.page_desk .order_menu .item .info .price .yuan{font-size:12px;}
+		.page_desk .order_menu .item .info .price .n{}
+		.page_desk .order_menu .item .info .tags{}
+		.page_desk .order_menu .item .info .tags .tag{display:inline-block; background: #e8a060; color:#fff; border-radius:2px; height:22px; width:22px; line-height: 22px; text-align: center;}
+		.page_desk .order_menu .item .opt{display:none; width:190px; height:70px; padding:5px; line-height: 70px; text-align: center; position: absolute; top:0; left:0; background:rgba(0,0,0,0.4);}
+		.page_desk .order_menu .item .opt a{display: inline-block; height: 40px; line-height: 40px; padding: 0 10px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color: #fff; border-radius: 4px; margin: 0 5px; border: 1px solid #e8a060;}
+		.page_desk .order_menu .item[data-state="1"] .opt{display:block;}
+		.page_desk .order_menu .item .count{position: absolute; bottom:4px; right:8px;}
+
+.page_yuyue{}
+
+.page_device{background:url(http://www.dqstone.net/assets/admin/img/cashier_bg2.png) repeat;}
+	.page_device .device_panel{width:320px;float:right; height:100%; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat;border-left:1px solid #45515e;}
+		.page_device .device_panel .step_cat{padding:10px;}
+		.page_device .device_panel .step_cat[data-state="0"]{display: none;}
+		.page_device .device_panel .step_cat .title{font-size:24px; color:#fff;margin-bottom:20px;display: block; height:36px; line-height: 36px;}
+		.page_device .device_panel .step_cat .item{height:40px; line-height: 40px; color:#fff; border-radius:4px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color: #fff; border: 1px solid #e8a060;margin-bottom:10px; padding:0 10px; cursor: pointer;}
+		.page_device .device_panel .step_cat .item .name{font-size: 16px; font-weight: normal; margin-right:8px;}
+		.page_device .device_panel .step_cat .item .intro{ font-size:14px; color:#FDD9B9;}
+		.page_device .device_panel .step_info{padding:10px;}
+		.page_device .device_panel .step_info[data-state="0"]{display: none;}
+		.page_device .device_panel .step_info .btn_back{display: block; margin-bottom: 20px; color:#fff; height: 36px; line-height: 36px;}
+		.page_device .device_panel .step_info .title{font-size: 24px;}
+		.page_device .device_panel .step_info .btn_back i.iconfont{font-size: 24px;}
+		.page_device .device_panel .step_info .box[data-state="0"]{display: none;}
+		.page_device .device_panel .step_info .item{margin-bottom:10px; border-bottom:1px dotted #6D7A88;padding-bottom:10px;}
+		.page_device .device_panel .step_info .item .tit{height:24px; line-height: 24px; color:#C8E3FF; font-size: 16px;}
+		.page_device .device_panel .step_info .item .ipt{padding:6px 0;}
+		.page_device .device_panel .step_info .item .ipt .text{color:#fff;}
+		.page_device .device_panel .step_info .item .ipt select{width:100%; height:32px; line-height: 32px; border:1px solid #6D7A88; border-radius: 4px;}
+		.page_device .device_panel .step_info .item .ipt input[type="text"]{height:32px; line-height: 32px; border:1px solid #6D7A88; border-radius: 4px; width:100%;}
+		.page_device .device_panel .step_info .item .ipt label{color:#fff; font-size: 16px; height:32px; line-height: 32px;display: inline-block; margin-right:10px;}
+		.page_device .device_panel .step_info .item .ipt input[type="radio"]{margin-right:8px;}
+		.page_device .device_panel .step_info .btn{display: block; height: 40px; border: 1px solid #e8a060;  background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; line-height: 40px;  color: #fff; text-align: center; border-radius: 4px;margin-top:10px;}
+		.page_device .device_panel .step_info .btns .btn[data-state="0"]{display: none;}
+	.page_device .device_list{margin-right:321px; border-right:1px solid #132231;}
+		.page_device .device_list .head a{height:36px; line-height: 36px; font-size: 24px; color:#fff;padding-left:10px; padding-top:10px; display: block;}
+		.page_device .device_list .head a i.iconfont{font-size: 24px;}
+		.page_device .device_list .list{padding:10px;}
+		.page_device .device_list .list .item{height:80px;margin-bottom:10px; overflow: hidden; padding:10px; background: #45515E;}
+		.page_device .device_list .list .item .opt{width:160px;float:right; text-align: right;}
+		.page_device .device_list .list .item .opt a{display: inline-block; height: 40px; width: 68px; border: 1px solid #e8a060; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; float: left; margin: 0 10px 10px 0; line-height: 40px; color: #fff; text-align: center; border-radius: 4px;margin-top:20px;}
+		.page_device .device_list .list .item .opt a.btn_edit{}
+		.page_device .device_list .list .item .opt a.btn_del{}
+		.page_device .device_list .list .item .info{margin-right:200px;}
+		.page_device .device_list .list .item .info .tumb{float:left; width:80px; height:80px;margin-right:10px;}
+		.page_device .device_list .list .item .info .tumb img{width:80px; height:80px; border-radius:4px; overflow: hidden;}
+		.page_device .device_list .list .item .info .title{font-size: 16px; color:#fff;display: block; height:32px; line-height: 32px; margin-bottom: 8px; font-weight: normal;}
+		.page_device .device_list .list .item .info .intro{ font-size:14px; color:#90B9E5;}
+
+.block_msg{position: absolute; z-index: 999999; top:0; left:0; width:100%; height:100%;display:none; overflow: hidden;}
+	.block_msg .mask{background: rgba(0,0,0,0.4);position: absolute; top:0; left:0; width:100%; height:100%;}
+	.block_msg .list{width:240px; position: absolute; right:-260px; top:0; height:100%; background: rgba(0,0,0,0.8); padding:10px; /*overflow-y:scroll;*/ overflow:hidden; border-left:1px solid #364F69;}
+	.block_msg .list .item{color:#fff; background:#2A4562; border:1px solid #7296BD; border-radius:4px; padding:10px; margin-bottom: 10px;}
+	.block_msg .list .item .content{line-height: 24px;}
+	.block_msg .list .item .opt{margin-top: 10px;text-align: right;}
+	.block_msg .list .item .opt a{display: block; height: 36px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color:#fff; display: inline-block;padding:0 10px; line-height: 36px; border-radius: 4px; border:1px solid #e8a060;}
+
+/*Dialog*/
+.dialog{width:100%; height:100%; position: fixed; top:0; left:0; z-index:9999; display: none;}
+	.dialog .dialog_mask{width:100%; height:100%; background:rgba(0,0,0,0.8);position:absolute; top:0; left:0;}
+	.dialog_wrap{width:400px; margin:40px auto 0; max-height:90%; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg2.png) repeat;border-radius:4px; border:1px solid #60a8e8; position: relative; text-align:center;font-size:14px; color:#fff;}
+	.dialog .dialog_close{position: absolute; right:-18px; top:-18px; width:36px; line-height: 36px; height:36px; text-align: center; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; border-radius:50%; color:#fff;border:1px solid #60a8e8;}
+	.dialog .dialog_hd{padding:10px 10px; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat; border-bottom:1px solid #132231; border-top-left-radius:4px; border-top-right-radius: 4px;}
+	.dialog .dialog_hd .title{font-size: 16px;}
+	.dialog .dialog_bd{ text-align: center;padding:20px 10px; color:#fff; overflow: hidden; border-bottom:1px solid #45515e;border-top:1px solid #45515e;}
+	.dialog .dialog_ft{padding:10px 10px; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat; border-top:1px solid #132231; border-bottom-left-radius:4px; border-bottom-right-radius: 4px;}
+	.dialog .dialog_hd .dfilter{text-align:left;}
+	.dialog .dialog_hd .dfilter select{height:32px; line-height: 32px; border:1px solid #ccc;}
+	.dialog .dialog_hd .dfilter select:focus{border-color:#93611C;}
+	.dialog .dialog_hd .dfilter input{height:32px; line-height: 32px; border:1px solid #ccc; padding: 0 10px; width:120px; width:100px;}
+	.dialog .dialog_hd .dfilter a{display:inline-block; height:32px; line-height: 32px; padding:0 20px; background: #BB7513; color:#fff; font-size: 14px; border-radius:6px;margin-left:5px; border-bottom:4px solid #93611C;}
+	.dialog .dialog_hd .dfilter a i.iconfont{font-size:18px; margin-right:6px;}
+	.dialog .dialog_hd .btns,
+	.dialog .dialog_ft .btns{}
+	.dialog .dialog_hd .btns a,
+	.dialog .dialog_ft .btns a{display:inline-block; height:40px; line-height: 40px; padding:0 20px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color:#fff; font-size: 14px; border-radius:4px;margin:0 5px; border:1px solid #e8a060;}
+	.dialog .dialog_hd .btns a[data-disable='1'],
+	.dialog .dialog_ft .btns a[data-disable='1']{background-color:#ddd; border-color: #999;}
+	.dialog .dialog_hd .btns a i.iconfont,
+	.dialog .dialog_ft .btns a i.iconfont{font-size:18px; margin-right:6px;}
+	.dialog .dialog_hd .btns a .timer,
+	.dialog .dialog_ft .btns a .timer{display: none;}
+	.dialog .dialog_hd .btns_left,
+	.dialog .dialog_ft .btns_left{text-align:left;}
+	.dialog .dialog_hd .btns_right,
+	.dialog .dialog_ft .btns_right{text-align:right;}
+	.dialog .dialog_scroll{/*overflow-y:scroll;*/ overflow:hidden;}
+	.dialog .set_nums{padding-top:10px; overflow: hidden;}
+	.dialog .set_nums a{height:36px; line-height: 36px; width:36px; display: block; float:left; margin-right:4px; text-align: center;border: 1px solid #e8a060; border-radius:4px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color:#fff; margin-bottom:4px;}
+.dform{text-align: left; line-height: 32px;}
+	.dform .item{padding:6px 0; overflow: hidden;}
+	.dform .ban{overflow: hidden;}
+	.dform .ban .item{width:48%;float:left;}
+	.dform .ban .item:first-child{margin-right:4%;}
+	.dform .item .tit{width:80px; float:left;}
+	.dform .item .ipt{margin-left:100px; margin-right: 24px;}
+	.dform .item .ipt input[type="text"],
+	.dform .item .ipt input[type="password"]{height:32px; line-height: 32px; border:1px solid #60a8e8; padding: 0 10px; width:100%; border-radius: 4px}
+	.dform .item .ipt select{height:32px; line-height: 32px; width:100%; border:1px solid #60a8e8; padding-left:10px; border-radius:4px;}
+	.dform .item .ipt input[type="text"]:focus,
+	.dform .item .ipt input[type="password"]:focus,
+	.dform .item .ipt select:focus{border-color:#93611C;}
+	.dform .line{clear:both; height:1px; background:#45515E; border-top: 1px solid #132231; margin-top: 10px;margin-bottom:10px;}
+.dtable{}
+	.dtable table{width:100%; border-spacing: 0; border-collapse: collapse; border-left: 1px solid #60A8E8; border-top: 1px solid #60A8E8;}
+	.dtable tr{}
+	.dtable th{height:32px; line-height: 32px; background: #152433; font-weight: bold; font-size: 14px; border-bottom: 1px solid #60A8E8; border-right: 1px solid #60A8E8; text-align:center; padding: 4px 10px;}
+	.dtable td{padding: 8px 6px; border-bottom: 1px solid #60A8E8; border-right: 1px solid #60A8E8; text-align: center; font-size: 12px;}
+	.dtable td a{display:inline-block; height:28px; line-height: 28px; padding: 0 6px; background: #BB7513; color:#fff; border-radius:4px; border-bottom:4px solid #93611C;}
+
+#dialog_card_fill_list .card_fill_list{overflow: hidden;}
+	#dialog_card_fill_list .card_fill_list .item{height: 95px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_3.png) repeat-x;  border: 1px solid #6799c7; border-radius: 4px;margin: 0 10px 10px 0; margin-bottom:10px; overflow: hidden;}
+	#dialog_card_fill_list .card_fill_list .selected{background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_3_2.png) repeat-x; border-color:#B8E09A;}
+	#dialog_card_fill_list .card_fill_list .item .hd{height: 36px; line-height: 36px; font-size: 16px; color: #fff;  padding-left:10px;}
+	#dialog_card_fill_list .card_fill_list .item .info{margin:5px; text-align:left;}
+	#dialog_card_fill_list .card_fill_list .item .info .it{display: block; width:33.3%; float:left; color: #bee0ff; height:24px; line-height: 24px;}
+	#dialog_card_fill_list .card_fill_list .item .info .it .tit{}
+	#dialog_card_fill_list .card_fill_list .item .info .it .val{}
+
+#dialog_desk{}
+	#dialog_desk .dialog_bd{padding:0;}
+	#dialog_desk .sidebar{width:250px;float:left; height:100%; background:url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat;border-right:1px solid #45515e;}
+	#dialog_desk .sidebar .filter{padding:10px 0 10px 10px;}
+	#dialog_desk .sidebar .filter .box{margin-bottom:10px;clear: both; overflow: hidden;}
+	#dialog_desk .sidebar .filter .box a{display: block; height:40px; width:68px; border:1px solid #60a8e8; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; float:left; margin:0 10px 10px 0; line-height: 40px; color:#9dc0e3; text-align: center; border-radius: 4px;}
+	#dialog_desk .sidebar .filter a[data-state='1']{border-color:#e8a060; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; color:#fff;}
+	#dialog_desk .list{/*padding:10px 0 0 10px;*/}
+		#dialog_desk .list .item{height:95px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_3.png) repeat-x; width:160px; border:1px solid #6799c7; border-radius:4px;float:left; margin:10px 0 0 10px;}
+		#dialog_desk .list .item .hd{height:36px; line-height: 36px; font-size: 16px; color:#fff; padding-left:36px;text-align: left;}
+		#dialog_desk .list .item[data-state='open'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_open.png) no-repeat 2px 2px;}
+		#dialog_desk .list .item[data-state='null'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_null.png) no-repeat 2px 2px;}
+		#dialog_desk .list .item[data-state='ding'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_ding.png) no-repeat 2px 2px;}
+		#dialog_desk .list .item[data-state='yuyue'] .hd{background:url(http://www.dqstone.net/assets/admin/img/desk_state_yuyue.png) no-repeat 2px 2px;}
+		#dialog_desk .list .item .info{color:#bee0ff; text-align: center; line-height: 18px; font-size: 12px; padding-top:10px;}
+		#dialog_desk .list .selected{background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_3_2.png) repeat-x; border-color:#B8E09A;}
+		#dialog_desk .list .item[data-state='null'] .info{padding-top:20px; font-size:16px;}
+
+#dialog_dian{}
+	#dialog_dian .dialog_bd{padding:0;}
+	#dialog_dian .dian_cat{width:160px; float:left; height:100%; /*padding-top:10px;*/ background:url(http://www.dqstone.net/assets/admin/img/cashier_bg1.png) repeat;border-right:1px solid #132231;}
+	#dialog_dian .dian_cat a{display: block; height:36px; line-height: 36px; background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_1.png) repeat-x; border:1px solid #60a8e8; border-radius:4px; text-align: left; color:#fff;padding-left: 8px; margin:8px 10px 0 10px;}
+	#dialog_dian .dian_cat a[data-state="1"]{background: url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; border-color:#e8a060;}
+	#dialog_dian .dian_cat a .count{height:18px; line-height: 18px; display: inline-block; text-align: center; background: #fff; color:#2F6EA8; margin-right:8px; width:18px; border-radius: 50%; float:right; margin-top:9px;}
+	#dialog_dian .dian_cat a[data-state="1"] .count{ background:#FDFAF6; color:#BB7513;}
+	
+	#dialog_dian .dian_menu{margin-left:161px; margin-right:300px; border-left:1px solid #45515e; text-align: left;}
+		#dialog_dian .dian_menu .item{width:180px; height:48px; float:left; margin:10px 0 0 10px; position: relative; border-radius:4px; overflow: hidden; border:1px solid #60A8E8; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_4.png) repeat-x; color:#fff; padding:5px;}
+		#dialog_dian .dian_menu .item[data-disabled="1"]{background: #071420; border-color:#497093;}
+		#dialog_dian .dian_menu .item .name{color:#B0D5F5;height:24px; font-size: 16px;}
+		#dialog_dian .dian_menu .item .price{position: absolute; bottom:4px; right:8px;}
+		#dialog_dian .dian_menu .item .price .yuan{font-size:12px;}
+		#dialog_dian .dian_menu .item .price .n{}
+		#dialog_dian .dian_menu .item .attr{display: none;}
+	#dialog_dian .dian_cart{width:290px; float:right;height:100%; text-align:left;padding-right:10px;position: relative;}
+	#dialog_dian .dian_cart .cart_list{background: url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat; margin-top: 10px; border: 1px solid #E8A060; border-radius: 4px; color:#A8692F; min-height:60px;}
+		#dialog_dian .dian_cart .cart_list .item{height:60px; line-height: 60px; overflow: hidden; padding:0 8px; border-bottom:1px dashed #bea877;}
+		#dialog_dian .dian_cart .cart_list .item:last-child{border-bottom:0;}
+		#dialog_dian .dian_cart .cart_list .item .info{margin-right:120px; line-height: 24px;}
+		#dialog_dian .dian_cart .cart_list .item .info .name{height:24px;margin-top:6px; font-size:16px;}
+		#dialog_dian .dian_cart .cart_list .item .info .price{height:24px;}
+		#dialog_dian .dian_cart .cart_list .item .info .price .count{margin-left:10px;}
+		#dialog_dian .dian_cart .cart_list .item .opt{width:120px; float:right;}
+		#dialog_dian .dian_cart .cart_list .item .opt .ipt_weight{width:40px; height:32px; width:32px; border-radius:4px; text-align:center; border:1px solid #ccc;}
+		#dialog_dian .dian_cart .cart_list .item .opt a{display:block; height:32px; width:32px; float:right; margin-left:6px; background:url(http://www.dqstone.net/assets/admin/img/cashier_jb_2.png) repeat-x; border:1px solid #e8a060; text-align: center; line-height: 32px; border-radius:4px; margin-top:13px; color:#fff;}
+	#dialog_dian .dian_cart .cart_info{border-top: 3px solid #894A1F; border-top-left-radius: 2px; border-top-right-radius: 2px;margin-top:10px;}
+		#dialog_dian .dian_cart .cart_info .foot_border{height: 10px; clear: both; background: url(http://www.dqstone.net/assets/admin/img/order_border.png) repeat-x;}
+		#dialog_dian .dian_cart .cart_info .item{line-height: 32px; overflow: hidden; background: url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat; color: #494a45; border-bottom: 1px dashed #BEA877;}
+		#dialog_dian .dian_cart .cart_info .item .it{width:50%; float:left;}
+		#dialog_dian .dian_cart .cart_info .item .name{float: left; margin-left: 15px; font-size: 14px;}
+		#dialog_dian .dian_cart .cart_info .item .val{float: right; margin-right: 15px; color:#f60;}
+		#dialog_dian .dian_cart .cart_info .item_remark{background: url(http://www.dqstone.net/assets/admin/img/cashier_bg_paper.jpg) repeat; padding:10px;}
+		#dialog_dian .dian_cart .cart_info .item_remark textarea{height:48px; line-height: 24px; border-radius:4px; border:1px solid #ccc; width:252px; padding:4px 8px;}
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+1. BASIC STYLE  
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+	.mCustomScrollbar{ -ms-touch-action: pinch-zoom; touch-action: pinch-zoom; /* direct pointer events to js */ }
+	.mCustomScrollbar.mCS_no_scrollbar, .mCustomScrollbar.mCS_touch_action{ -ms-touch-action: auto; touch-action: auto; }
+	
+	.mCustomScrollBox{ /* contains plugin's markup */
+		position: relative;
+		overflow: hidden;
+		height: 100%;
+		max-width: 100%;
+		outline: none;
+		direction: ltr;
+	}
+
+	.mCSB_container{ /* contains the original content */
+		overflow: hidden;
+		width: auto;
+		height: auto;
+	}
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+2. VERTICAL SCROLLBAR 
+y-axis
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+	.mCSB_inside > .mCSB_container{ margin-right:0px; }
+
+	.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden{ margin-right: 0; } /* non-visible scrollbar */
+	
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_container{ /* RTL direction/left-side scrollbar */
+		margin-right: 0;
+		margin-left: 30px;
+	}
+	
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden{ margin-left: 0; } /* RTL direction/left-side scrollbar */
+
+	.mCSB_scrollTools{ /* contains scrollbar markup (draggable element, dragger rail, buttons etc.) */
+		position: absolute;
+		width: 16px;
+		height: auto;
+		left: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.mCSB_outside + .mCSB_scrollTools{ right: -26px; } /* scrollbar position: outside */
+	
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_scrollTools, 
+	.mCS-dir-rtl > .mCSB_outside + .mCSB_scrollTools{ /* RTL direction/left-side scrollbar */
+		right: auto;
+		left: 0;
+	}
+	
+	.mCS-dir-rtl > .mCSB_outside + .mCSB_scrollTools{ left: -26px; } /* RTL direction/left-side scrollbar (scrollbar position: outside) */
+
+	.mCSB_scrollTools .mCSB_draggerContainer{ /* contains the draggable element and dragger rail markup */
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0; 
+		height: auto;
+	}
+
+	.mCSB_scrollTools a + .mCSB_draggerContainer{ margin: 20px 0; }
+
+	.mCSB_scrollTools .mCSB_draggerRail{
+		width: 2px;
+		height: 100%;
+		margin: 0 auto;
+		-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
+	}
+
+	.mCSB_scrollTools .mCSB_dragger{ /* the draggable element */
+		cursor: pointer;
+		width: 100%;
+		height: 30px; /* minimum dragger height */
+		z-index: 1;
+	}
+
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ /* the dragger element */
+		position: relative;
+		width: 4px;
+		height: 100%;
+		margin: 0 auto;
+		-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
+		text-align: center;
+	}
+	
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar{ width: 12px; /* auto-expanded scrollbar */ }
+	
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail{ width: 8px; /* auto-expanded scrollbar */ }
+
+	.mCSB_scrollTools .mCSB_buttonUp,
+	.mCSB_scrollTools .mCSB_buttonDown{
+		display: block;
+		position: absolute;
+		height: 20px;
+		width: 100%;
+		overflow: hidden;
+		margin: 0 auto;
+		cursor: pointer;
+	}
+
+	.mCSB_scrollTools .mCSB_buttonDown{ bottom: 0; }
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+3. HORIZONTAL SCROLLBAR 
+x-axis
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+	.mCSB_horizontal.mCSB_inside > .mCSB_container{
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+	
+	.mCSB_horizontal.mCSB_outside > .mCSB_container{ min-height: 100%; }
+
+	.mCSB_horizontal > .mCSB_container.mCS_no_scrollbar_x.mCS_x_hidden{ margin-bottom: 0; } /* non-visible scrollbar */
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal{
+		width: auto;
+		height: 16px;
+		top: auto;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.mCustomScrollBox + .mCSB_scrollTools.mCSB_scrollTools_horizontal,
+	.mCustomScrollBox + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal{ bottom: -26px; } /* scrollbar position: outside */
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal a + .mCSB_draggerContainer{ margin: 0 20px; }
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		width: 100%;
+		height: 2px;
+		margin: 7px 0;
+	}
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger{
+		width: 30px; /* minimum dragger width */
+		height: 100%;
+		left: 0;
+	}
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		width: 100%;
+		height: 4px;
+		margin: 6px auto;
+	}
+	
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar{
+		height: 12px; /* auto-expanded scrollbar */
+		margin: 2px auto;
+	}
+	
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail{
+		height: 8px; /* auto-expanded scrollbar */
+		margin: 4px 0;
+	}
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft,
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight{
+		display: block;
+		position: absolute;
+		width: 20px;
+		height: 100%;
+		overflow: hidden;
+		margin: 0 auto;
+		cursor: pointer;
+	}
+	
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft{ left: 0; }
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight{ right: 0; }
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+4. VERTICAL AND HORIZONTAL SCROLLBARS 
+yx-axis 
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+	.mCSB_container_wrapper{
+		position: absolute;
+		height: auto;
+		width: auto;
+		overflow: hidden;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin-right: 30px;
+		margin-bottom: 30px;
+	}
+	
+	.mCSB_container_wrapper > .mCSB_container{
+		padding-right: 30px;
+		padding-bottom: 30px;
+		-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+	}
+	
+	.mCSB_vertical_horizontal > .mCSB_scrollTools.mCSB_scrollTools_vertical{ bottom: 20px; }
+	
+	.mCSB_vertical_horizontal > .mCSB_scrollTools.mCSB_scrollTools_horizontal{ right: 20px; }
+	
+	/* non-visible horizontal scrollbar */
+	.mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden + .mCSB_scrollTools.mCSB_scrollTools_vertical{ bottom: 0; }
+	
+	/* non-visible vertical scrollbar/RTL direction/left-side scrollbar */
+	.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal, 
+	.mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_scrollTools.mCSB_scrollTools_horizontal{ right: 0; }
+	
+	/* RTL direction/left-side scrollbar */
+	.mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_scrollTools.mCSB_scrollTools_horizontal{ left: 20px; }
+	
+	/* non-visible scrollbar/RTL direction/left-side scrollbar */
+	.mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal{ left: 0; }
+	
+	.mCS-dir-rtl > .mCSB_inside > .mCSB_container_wrapper{ /* RTL direction/left-side scrollbar */
+		margin-right: 0;
+		margin-left: 30px;
+	}
+	
+	.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden > .mCSB_container{ padding-right: 0; }
+	
+	.mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden > .mCSB_container{ padding-bottom: 0; }
+	
+	.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden{
+		margin-right: 0; /* non-visible scrollbar */
+		margin-left: 0;
+	}
+	
+	/* non-visible horizontal scrollbar */
+	.mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden{ margin-bottom: 0; }
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+5. TRANSITIONS  
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+	.mCSB_scrollTools, 
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCSB_scrollTools .mCSB_buttonUp,
+	.mCSB_scrollTools .mCSB_buttonDown,
+	.mCSB_scrollTools .mCSB_buttonLeft,
+	.mCSB_scrollTools .mCSB_buttonRight{
+		-webkit-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+		-moz-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+		-o-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+		transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+	}
+	
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar, /* auto-expanded scrollbar */
+	.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar, 
+	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail{
+		-webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+					margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+					margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+					opacity .2s ease-in-out, background-color .2s ease-in-out; 
+		-moz-transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+					margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+					margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+					opacity .2s ease-in-out, background-color .2s ease-in-out; 
+		-o-transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+					margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+					margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+					opacity .2s ease-in-out, background-color .2s ease-in-out; 
+		transition: width .2s ease-out .2s, height .2s ease-out .2s, 
+					margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, 
+					margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+					opacity .2s ease-in-out, background-color .2s ease-in-out; 
+	}
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------
+6. SCROLLBAR COLORS, OPACITY AND BACKGROUNDS  
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+	/* 
+	----------------------------------------
+	6.1 THEMES 
+	----------------------------------------
+	*/
+	
+	/* default theme ("light") */
+
+	.mCSB_scrollTools{ opacity: 0.75; filter: "alpha(opacity=75)"; -ms-filter: "alpha(opacity=75)"; }
+	
+	.mCS-autoHide > .mCustomScrollBox > .mCSB_scrollTools,
+	.mCS-autoHide > .mCustomScrollBox ~ .mCSB_scrollTools{ opacity: 0; filter: "alpha(opacity=0)"; -ms-filter: "alpha(opacity=0)"; }
+	
+	.mCustomScrollbar > .mCustomScrollBox > .mCSB_scrollTools.mCSB_scrollTools_onDrag,
+	.mCustomScrollbar > .mCustomScrollBox ~ .mCSB_scrollTools.mCSB_scrollTools_onDrag,
+	.mCustomScrollBox:hover > .mCSB_scrollTools,
+	.mCustomScrollBox:hover ~ .mCSB_scrollTools,
+	.mCS-autoHide:hover > .mCustomScrollBox > .mCSB_scrollTools,
+	.mCS-autoHide:hover > .mCustomScrollBox ~ .mCSB_scrollTools{ opacity: 1; filter: "alpha(opacity=100)"; -ms-filter: "alpha(opacity=100)"; }
+
+	.mCSB_scrollTools .mCSB_draggerRail{
+		background-color: #000; background-color: rgba(0,0,0,0.4);
+		filter: "alpha(opacity=40)"; -ms-filter: "alpha(opacity=40)"; 
+	}
+
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		background-color: #fff; background-color: rgba(255,255,255,0.75);
+		filter: "alpha(opacity=75)"; -ms-filter: "alpha(opacity=75)"; 
+	}
+
+	.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+		background-color: #fff; background-color: rgba(255,255,255,0.85);
+		filter: "alpha(opacity=85)"; -ms-filter: "alpha(opacity=85)"; 
+	}
+	.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+		background-color: #fff; background-color: rgba(255,255,255,0.9);
+		filter: "alpha(opacity=90)"; -ms-filter: "alpha(opacity=90)"; 
+	}
+
+	.mCSB_scrollTools .mCSB_buttonUp,
+	.mCSB_scrollTools .mCSB_buttonDown,
+	.mCSB_scrollTools .mCSB_buttonLeft,
+	.mCSB_scrollTools .mCSB_buttonRight{
+		background-image: url(mCSB_buttons.png); /* css sprites */
+		background-repeat: no-repeat;
+		opacity: 0.4; filter: "alpha(opacity=40)"; -ms-filter: "alpha(opacity=40)"; 
+	}
+
+	.mCSB_scrollTools .mCSB_buttonUp{
+		background-position: 0 0;
+		/* 
+		sprites locations 
+		light: 0 0, -16px 0, -32px 0, -48px 0, 0 -72px, -16px -72px, -32px -72px
+		dark: -80px 0, -96px 0, -112px 0, -128px 0, -80px -72px, -96px -72px, -112px -72px
+		*/
+	}
+
+	.mCSB_scrollTools .mCSB_buttonDown{
+		background-position: 0 -20px;
+		/* 
+		sprites locations
+		light: 0 -20px, -16px -20px, -32px -20px, -48px -20px, 0 -92px, -16px -92px, -32px -92px
+		dark: -80px -20px, -96px -20px, -112px -20px, -128px -20px, -80px -92px, -96px -92px, -112 -92px
+		*/
+	}
+
+	.mCSB_scrollTools .mCSB_buttonLeft{
+		background-position: 0 -40px;
+		/* 
+		sprites locations 
+		light: 0 -40px, -20px -40px, -40px -40px, -60px -40px, 0 -112px, -20px -112px, -40px -112px
+		dark: -80px -40px, -100px -40px, -120px -40px, -140px -40px, -80px -112px, -100px -112px, -120px -112px
+		*/
+	}
+
+	.mCSB_scrollTools .mCSB_buttonRight{
+		background-position: 0 -56px;
+		/* 
+		sprites locations 
+		light: 0 -56px, -20px -56px, -40px -56px, -60px -56px, 0 -128px, -20px -128px, -40px -128px
+		dark: -80px -56px, -100px -56px, -120px -56px, -140px -56px, -80px -128px, -100px -128px, -120px -128px
+		*/
+	}
+
+	.mCSB_scrollTools .mCSB_buttonUp:hover,
+	.mCSB_scrollTools .mCSB_buttonDown:hover,
+	.mCSB_scrollTools .mCSB_buttonLeft:hover,
+	.mCSB_scrollTools .mCSB_buttonRight:hover{ opacity: 0.75; filter: "alpha(opacity=75)"; -ms-filter: "alpha(opacity=75)"; }
+
+	.mCSB_scrollTools .mCSB_buttonUp:active,
+	.mCSB_scrollTools .mCSB_buttonDown:active,
+	.mCSB_scrollTools .mCSB_buttonLeft:active,
+	.mCSB_scrollTools .mCSB_buttonRight:active{ opacity: 0.9; filter: "alpha(opacity=90)"; -ms-filter: "alpha(opacity=90)"; }
+	
+
+	/* theme: "dark" */
+
+	.mCS-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.15); }
+
+	.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.75); }
+
+	.mCS-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: rgba(0,0,0,0.85); }
+
+	.mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: rgba(0,0,0,0.9); }
+
+	.mCS-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -80px 0; }
+
+	.mCS-dark.mCSB_scrollTools .mCSB_buttonDown{ background-position: -80px -20px; }
+
+	.mCS-dark.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -80px -40px; }
+
+	.mCS-dark.mCSB_scrollTools .mCSB_buttonRight{ background-position: -80px -56px; }
+	
+	/* ---------------------------------------- */
+	
+
+
+	/* theme: "light-2", "dark-2" */
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail{
+		width: 4px;
+		background-color: #fff; background-color: rgba(255,255,255,0.1);
+		-webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px;
+	}
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		width: 4px;
+		background-color: #fff; background-color: rgba(255,255,255,0.75);
+		-webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px;
+	}
+
+	.mCS-light-2.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-dark-2.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-light-2.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-2.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		width: 100%;
+		height: 4px;
+		margin: 6px auto;
+	}
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.85); }
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-light-2.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_buttonUp{ background-position: -32px 0; }
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_buttonDown{	background-position: -32px -20px; }
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_buttonLeft{	background-position: -40px -40px; }
+
+	.mCS-light-2.mCSB_scrollTools .mCSB_buttonRight{ background-position: -40px -56px; }
+	
+	
+	/* theme: "dark-2" */
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail{
+		background-color: #000; background-color: rgba(0,0,0,0.1);
+		-webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px;
+	}
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		background-color: #000; background-color: rgba(0,0,0,0.75);
+		-webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px;
+	}
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-dark-2.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonUp{ background-position: -112px 0; }
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonDown{ background-position: -112px -20px; }
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -120px -40px; }
+
+	.mCS-dark-2.mCSB_scrollTools .mCSB_buttonRight{	background-position: -120px -56px; }
+	
+	/* ---------------------------------------- */
+	
+
+
+	/* theme: "light-thick", "dark-thick" */
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_draggerRail{
+		width: 4px;
+		background-color: #fff; background-color: rgba(255,255,255,0.1);
+		-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+	}
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		width: 6px;
+		background-color: #fff; background-color: rgba(255,255,255,0.75);
+		-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+	}
+
+	.mCS-light-thick.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-dark-thick.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		width: 100%;
+		height: 4px;
+		margin: 6px 0;
+	}
+
+	.mCS-light-thick.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-thick.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		width: 100%;
+		height: 6px;
+		margin: 5px auto;
+	}
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.85); }
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-light-thick.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonUp{ background-position: -16px 0; }
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonDown{	background-position: -16px -20px; }
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonLeft{	background-position: -20px -40px; }
+
+	.mCS-light-thick.mCSB_scrollTools .mCSB_buttonRight{ background-position: -20px -56px; }
+
+
+	/* theme: "dark-thick" */
+	
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_draggerRail{
+		background-color: #000; background-color: rgba(0,0,0,0.1);
+		-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+	}
+
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		background-color: #000; background-color: rgba(0,0,0,0.75);
+		-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+	}
+
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
+
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
+
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_buttonUp{ background-position: -96px 0; }
+
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_buttonDown{ background-position: -96px -20px; }
+
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -100px -40px; }
+
+	.mCS-dark-thick.mCSB_scrollTools .mCSB_buttonRight{	background-position: -100px -56px; }
+	
+	/* ---------------------------------------- */
+	
+
+
+	/* theme: "light-thin", "dark-thin" */
+	
+	.mCS-light-thin.mCSB_scrollTools .mCSB_draggerRail{ background-color: #fff; background-color: rgba(255,255,255,0.1); }
+
+	.mCS-light-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ width: 2px; }
+
+	.mCS-light-thin.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-dark-thin.mCSB_scrollTools_horizontal .mCSB_draggerRail{ width: 100%; }
+
+	.mCS-light-thin.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-thin.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		width: 100%;
+		height: 2px;
+		margin: 7px auto;
+	}
+
+
+	/* theme "dark-thin" */
+	
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.15); }
+
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.75); }
+	
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
+	
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
+	
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_buttonUp{	background-position: -80px 0; }
+
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_buttonDown{ background-position: -80px -20px; }
+
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -80px -40px; }
+
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_buttonRight{ background-position: -80px -56px; }
+	
+	/* ---------------------------------------- */
+	
+	
+	
+	/* theme "rounded", "rounded-dark", "rounded-dots", "rounded-dots-dark" */
+	
+	.mCS-rounded.mCSB_scrollTools .mCSB_draggerRail{ background-color: #fff; background-color: rgba(255,255,255,0.15); }
+	
+	.mCS-rounded.mCSB_scrollTools .mCSB_dragger, 
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger, 
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_dragger, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger{ height: 14px; }
+	
+	.mCS-rounded.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		width: 14px;
+		margin: 0 1px;
+	}
+	
+	.mCS-rounded.mCSB_scrollTools_horizontal .mCSB_dragger, 
+	.mCS-rounded-dark.mCSB_scrollTools_horizontal .mCSB_dragger, 
+	.mCS-rounded-dots.mCSB_scrollTools_horizontal .mCSB_dragger, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools_horizontal .mCSB_dragger{ width: 14px; }
+	
+	.mCS-rounded.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dots.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		height: 14px;
+		margin: 1px 0;
+	}
+	
+	.mCS-rounded.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCS-rounded.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dark.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCS-rounded-dark.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar{
+		width: 16px; /* auto-expanded scrollbar */
+		height: 16px;
+		margin: -1px 0;
+	}
+	
+	.mCS-rounded.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-rounded.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail, 
+	.mCS-rounded-dark.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-rounded-dark.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail{ width: 4px; /* auto-expanded scrollbar */ }
+	
+	.mCS-rounded.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCS-rounded.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dark.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
+	.mCS-rounded-dark.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar{
+		height: 16px; /* auto-expanded scrollbar */
+		width: 16px;
+		margin: 0 -1px;
+	}
+	
+	.mCS-rounded.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-rounded.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail, 
+	.mCS-rounded-dark.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-rounded-dark.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail{
+		height: 4px; /* auto-expanded scrollbar */
+		margin: 6px 0;
+	}
+	
+	.mCS-rounded.mCSB_scrollTools .mCSB_buttonUp{ background-position: 0 -72px; }
+	
+	.mCS-rounded.mCSB_scrollTools .mCSB_buttonDown{ background-position: 0 -92px; }
+	
+	.mCS-rounded.mCSB_scrollTools .mCSB_buttonLeft{ background-position: 0 -112px; }
+	
+	.mCS-rounded.mCSB_scrollTools .mCSB_buttonRight{ background-position: 0 -128px; }
+	
+	
+	/* theme "rounded-dark", "rounded-dots-dark" */
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.75); }
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.15); }
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -80px -72px; }
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_buttonDown{ background-position: -80px -92px; }
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -80px -112px; }
+	
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_buttonRight{ background-position: -80px -128px; }
+	
+	
+	/* theme "rounded-dots", "rounded-dots-dark" */
+	
+	.mCS-rounded-dots.mCSB_scrollTools_vertical .mCSB_draggerRail, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools_vertical .mCSB_draggerRail{ width: 4px; }
+	
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-rounded-dots.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		background-color: transparent;
+		background-position: center;
+	}
+	
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail{
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYV2NkIAAYiVbw//9/Y6DiM1ANJoyMjGdBbLgJQAX/kU0DKgDLkaQAvxW4HEvQFwCRcxIJK1XznAAAAABJRU5ErkJggg==");
+		background-repeat: repeat-y;
+		opacity: 0.3;
+		filter: "alpha(opacity=30)"; -ms-filter: "alpha(opacity=30)"; 
+	}
+	
+	.mCS-rounded-dots.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-rounded-dots-dark.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		height: 4px;
+		margin: 6px 0;
+		background-repeat: repeat-x;
+	}
+	
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_buttonUp{ background-position: -16px -72px; }
+	
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_buttonDown{ background-position: -16px -92px; }
+	
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -20px -112px; }
+	
+	.mCS-rounded-dots.mCSB_scrollTools .mCSB_buttonRight{ background-position: -20px -128px; }
+	
+	
+	/* theme "rounded-dots-dark" */
+	
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail{
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAALElEQVQYV2NkIAAYSVFgDFR8BqrBBEifBbGRTfiPZhpYjiQFBK3A6l6CvgAAE9kGCd1mvgEAAAAASUVORK5CYII=");
+	}
+	
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -96px -72px; }
+	
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_buttonDown{ background-position: -96px -92px; }
+	
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -100px -112px; }
+	
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_buttonRight{ background-position: -100px -128px; }
+	
+	/* ---------------------------------------- */
+	
+	
+	
+	/* theme "3d", "3d-dark", "3d-thick", "3d-thick-dark" */
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		background-repeat: repeat-y;
+		background-image: -moz-linear-gradient(left, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+		background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0)));
+		background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+		background-image: -o-linear-gradient(left, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+		background-image: -ms-linear-gradient(left, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+		background-image: linear-gradient(to right, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+	}
+	
+	.mCS-3d.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		background-repeat: repeat-x;
+		background-image: -moz-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0)));
+		background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+		background-image: -o-linear-gradient(top, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+		background-image: -ms-linear-gradient(top, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+		background-image: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+	}
+	
+	
+	/* theme "3d", "3d-dark" */
+	
+	.mCS-3d.mCSB_scrollTools_vertical .mCSB_dragger, 
+	.mCS-3d-dark.mCSB_scrollTools_vertical .mCSB_dragger{ height: 70px; }
+	
+	.mCS-3d.mCSB_scrollTools_horizontal .mCSB_dragger, 
+	.mCS-3d-dark.mCSB_scrollTools_horizontal .mCSB_dragger{ width: 70px; }
+	
+	.mCS-3d.mCSB_scrollTools, 
+	.mCS-3d-dark.mCSB_scrollTools{
+		opacity: 1;
+		filter: "alpha(opacity=30)"; -ms-filter: "alpha(opacity=30)"; 
+	}
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-3d.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ -webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px; }
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_draggerRail{
+		width: 8px;
+		background-color: #000; background-color: rgba(0,0,0,0.2);
+		box-shadow: inset 1px 0 1px rgba(0,0,0,0.5), inset -1px 0 1px rgba(255,255,255,0.2);
+	}
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 	 
+	.mCS-3d.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
+	.mCS-3d.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-3d.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #555; }
+
+	.mCS-3d.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ width: 8px; }
+
+	.mCS-3d.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-3d-dark.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		width: 100%;
+		height: 8px;
+		margin: 4px 0;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,0.5), inset 0 -1px 1px rgba(255,255,255,0.2);
+	}
+
+	.mCS-3d.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		width: 100%;
+		height: 8px;
+		margin: 4px auto;
+	}
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_buttonUp{ background-position: -32px -72px; }
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_buttonDown{ background-position: -32px -92px; }
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -40px -112px; }
+	
+	.mCS-3d.mCSB_scrollTools .mCSB_buttonRight{ background-position: -40px -128px; }
+	
+	
+	/* theme "3d-dark" */
+	
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_draggerRail{
+		background-color: #000; background-color: rgba(0,0,0,0.1);
+		box-shadow: inset 1px 0 1px rgba(0,0,0,0.1);
+	}
+	
+	.mCS-3d-dark.mCSB_scrollTools_horizontal .mCSB_draggerRail{ box-shadow: inset 0 1px 1px rgba(0,0,0,0.1); }
+	
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -112px -72px; }
+
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_buttonDown{ background-position: -112px -92px; }
+
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -120px -112px; }
+
+	.mCS-3d-dark.mCSB_scrollTools .mCSB_buttonRight{	background-position: -120px -128px; }
+	
+	/* ---------------------------------------- */
+	
+	
+	
+	/* theme: "3d-thick", "3d-thick-dark" */
+	
+	.mCS-3d-thick.mCSB_scrollTools, 
+	.mCS-3d-thick-dark.mCSB_scrollTools{
+		opacity: 1;
+		filter: "alpha(opacity=30)"; -ms-filter: "alpha(opacity=30)"; 
+	}
+	
+	.mCS-3d-thick.mCSB_scrollTools, 
+	.mCS-3d-thick-dark.mCSB_scrollTools, 
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_draggerContainer, 
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_draggerContainer{ -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px; }
+	
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+	
+	.mCSB_inside + .mCS-3d-thick.mCSB_scrollTools_vertical, 
+	.mCSB_inside + .mCS-3d-thick-dark.mCSB_scrollTools_vertical{ right: 1px; }
+	
+	.mCS-3d-thick.mCSB_scrollTools_vertical, 
+	.mCS-3d-thick-dark.mCSB_scrollTools_vertical{ box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset 0 0 14px rgba(0,0,0,0.5); }
+	
+	.mCS-3d-thick.mCSB_scrollTools_horizontal, 
+	.mCS-3d-thick-dark.mCSB_scrollTools_horizontal{
+		bottom: 1px;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,0.1), inset 0 0 14px rgba(0,0,0,0.5);
+	}
+	
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		box-shadow: inset 1px 0 0 rgba(255,255,255,0.4);
+		width: 12px;
+		margin: 2px;
+		position: absolute;
+		height: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	
+	.mCS-3d-thick.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{ box-shadow: inset 0 1px 0 rgba(255,255,255,0.4); }
+	
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,  
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #555; }
+	
+	.mCS-3d-thick.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-3d-thick-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		height: 12px;
+		width: auto;
+	}
+	
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_draggerContainer{
+		background-color: #000; background-color: rgba(0,0,0,0.05);
+		box-shadow: inset 1px 1px 16px rgba(0,0,0,0.1);
+	}
+	
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_draggerRail{ background-color: transparent; }
+	
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_buttonUp{ background-position: -32px -72px; }
+	
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_buttonDown{ background-position: -32px -92px; }
+
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -40px -112px; }
+
+	.mCS-3d-thick.mCSB_scrollTools .mCSB_buttonRight{	background-position: -40px -128px; }
+	
+	
+	/* theme: "3d-thick-dark" */
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools{ box-shadow: inset 0 0 14px rgba(0,0,0,0.2); }
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools_horizontal{ box-shadow: inset 0 1px 1px rgba(0,0,0,0.1), inset 0 0 14px rgba(0,0,0,0.2); }
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ box-shadow: inset 1px 0 0 rgba(255,255,255,0.4), inset -1px 0 0 rgba(0,0,0,0.2); }
+	 
+	.mCS-3d-thick-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{ box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.2); }
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,  
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #777; }
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_draggerContainer{
+		background-color: #fff; background-color: rgba(0,0,0,0.05);
+		box-shadow: inset 1px 1px 16px rgba(0,0,0,0.1);
+	}
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: transparent; }
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -112px -72px; }
+	
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_buttonDown{ background-position: -112px -92px; }
+
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -120px -112px; }
+
+	.mCS-3d-thick-dark.mCSB_scrollTools .mCSB_buttonRight{	background-position: -120px -128px; }
+	
+	/* ---------------------------------------- */
+	
+	
+	
+	/* theme: "minimal", "minimal-dark" */
+	
+	.mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical, 
+	.mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical{
+		right: 0; 
+		margin: 12px 0; 
+	}
+	
+	.mCustomScrollBox.mCS-minimal + .mCSB_scrollTools.mCSB_scrollTools_horizontal, 
+	.mCustomScrollBox.mCS-minimal + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal, 
+	.mCustomScrollBox.mCS-minimal-dark + .mCSB_scrollTools.mCSB_scrollTools_horizontal, 
+	.mCustomScrollBox.mCS-minimal-dark + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal{
+		bottom: 0; 
+		margin: 0 12px; 
+	}
+	
+	/* RTL direction/left-side scrollbar */
+	.mCS-dir-rtl > .mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical, 
+	.mCS-dir-rtl > .mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical{
+		left: 0; 
+		right: auto;
+	}
+	
+	.mCS-minimal.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-minimal-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: transparent; }
+	
+	.mCS-minimal.mCSB_scrollTools_vertical .mCSB_dragger, 
+	.mCS-minimal-dark.mCSB_scrollTools_vertical .mCSB_dragger{ height: 50px; }
+	
+	.mCS-minimal.mCSB_scrollTools_horizontal .mCSB_dragger, 
+	.mCS-minimal-dark.mCSB_scrollTools_horizontal .mCSB_dragger{ width: 50px; }
+	
+	.mCS-minimal.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		background-color: #fff; background-color: rgba(255,255,255,0.2);
+		filter: "alpha(opacity=20)"; -ms-filter: "alpha(opacity=20)"; 
+	}
+	
+	.mCS-minimal.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-minimal.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+		background-color: #fff; background-color: rgba(255,255,255,0.5);
+		filter: "alpha(opacity=50)"; -ms-filter: "alpha(opacity=50)"; 
+	}
+	
+	
+	/* theme: "minimal-dark" */
+	
+	.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		background-color: #000; background-color: rgba(0,0,0,0.2);
+		filter: "alpha(opacity=20)"; -ms-filter: "alpha(opacity=20)"; 
+	}
+	
+	.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+		background-color: #000; background-color: rgba(0,0,0,0.5);
+		filter: "alpha(opacity=50)"; -ms-filter: "alpha(opacity=50)"; 
+	}
+	
+	/* ---------------------------------------- */
+	
+	
+	
+	/* theme "light-3", "dark-3" */
+	
+	.mCS-light-3.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-dark-3.mCSB_scrollTools .mCSB_draggerRail{
+		width: 6px;
+		background-color: #000; background-color: rgba(0,0,0,0.2);
+	}
+
+	.mCS-light-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ width: 6px; }
+
+	.mCS-light-3.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-dark-3.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-light-3.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-dark-3.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		width: 100%;
+		height: 6px;
+		margin: 5px 0;
+	}
+	
+	.mCS-light-3.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-light-3.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail, 
+	.mCS-dark-3.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-dark-3.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail{
+		width: 12px;
+	}
+	
+	.mCS-light-3.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-light-3.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail, 
+	.mCS-dark-3.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, 
+	.mCS-dark-3.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail{
+		height: 12px;
+		margin: 2px 0;
+	}
+	
+	.mCS-light-3.mCSB_scrollTools .mCSB_buttonUp{ background-position: -32px -72px; }
+	
+	.mCS-light-3.mCSB_scrollTools .mCSB_buttonDown{ background-position: -32px -92px; }
+	
+	.mCS-light-3.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -40px -112px; }
+	
+	.mCS-light-3.mCSB_scrollTools .mCSB_buttonRight{ background-position: -40px -128px; }
+	
+	
+	/* theme "dark-3" */
+	
+	.mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.75); }
+
+	.mCS-dark-3.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
+
+	.mCS-dark-3.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-dark-3.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
+	
+	.mCS-dark-3.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.1); }
+	
+	.mCS-dark-3.mCSB_scrollTools .mCSB_buttonUp{ background-position: -112px -72px; }
+
+	.mCS-dark-3.mCSB_scrollTools .mCSB_buttonDown{ background-position: -112px -92px; }
+
+	.mCS-dark-3.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -120px -112px; }
+
+	.mCS-dark-3.mCSB_scrollTools .mCSB_buttonRight{	background-position: -120px -128px; }
+	
+	/* ---------------------------------------- */
+	
+	
+	
+	/* theme "inset", "inset-dark", "inset-2", "inset-2-dark", "inset-3", "inset-3-dark" */
+	
+	.mCS-inset.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-2.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-3.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_draggerRail{
+		width: 12px;
+		background-color: #000; background-color: rgba(0,0,0,0.2);
+	}
+
+	.mCS-inset.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ 
+		width: 6px;
+		margin: 3px 5px;
+		position: absolute;
+		height: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.mCS-inset.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-2.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-2-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-3.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-3-dark.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		height: 6px;
+		margin: 5px 3px;
+		position: absolute;
+		width: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	
+	.mCS-inset.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-inset-dark.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-inset-2.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-inset-2-dark.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-inset-3.mCSB_scrollTools_horizontal .mCSB_draggerRail, 
+	.mCS-inset-3-dark.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		width: 100%;
+		height: 12px;
+		margin: 2px 0;
+	}
+	
+	.mCS-inset.mCSB_scrollTools .mCSB_buttonUp, 
+	.mCS-inset-2.mCSB_scrollTools .mCSB_buttonUp, 
+	.mCS-inset-3.mCSB_scrollTools .mCSB_buttonUp{ background-position: -32px -72px; }
+	
+	.mCS-inset.mCSB_scrollTools .mCSB_buttonDown, 
+	.mCS-inset-2.mCSB_scrollTools .mCSB_buttonDown, 
+	.mCS-inset-3.mCSB_scrollTools .mCSB_buttonDown{ background-position: -32px -92px; }
+	
+	.mCS-inset.mCSB_scrollTools .mCSB_buttonLeft, 
+	.mCS-inset-2.mCSB_scrollTools .mCSB_buttonLeft, 
+	.mCS-inset-3.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -40px -112px; }
+	
+	.mCS-inset.mCSB_scrollTools .mCSB_buttonRight, 
+	.mCS-inset-2.mCSB_scrollTools .mCSB_buttonRight, 
+	.mCS-inset-3.mCSB_scrollTools .mCSB_buttonRight{ background-position: -40px -128px; }
+	
+	
+	/* theme "inset-dark", "inset-2-dark", "inset-3-dark" */
+	
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.75); }
+
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
+
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
+	
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.1); }
+	
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_buttonUp, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_buttonUp, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -112px -72px; }
+
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_buttonDown, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_buttonDown, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_buttonDown{ background-position: -112px -92px; }
+
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_buttonLeft, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_buttonLeft, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_buttonLeft{ background-position: -120px -112px; }
+
+	.mCS-inset-dark.mCSB_scrollTools .mCSB_buttonRight, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_buttonRight, 
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_buttonRight{	background-position: -120px -128px; }
+	
+	
+	/* theme "inset-2", "inset-2-dark" */
+	
+	.mCS-inset-2.mCSB_scrollTools .mCSB_draggerRail, 
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_draggerRail{
+		background-color: transparent;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #fff;
+		border-color: rgba(255,255,255,0.2);
+		-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+	}
+	
+	.mCS-inset-2-dark.mCSB_scrollTools .mCSB_draggerRail{ border-color: #000; border-color: rgba(0,0,0,0.2); }
+	
+	
+	/* theme "inset-3", "inset-3-dark" */
+	
+	.mCS-inset-3.mCSB_scrollTools .mCSB_draggerRail{ background-color: #fff; background-color: rgba(255,255,255,0.6); }
+	
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.6); }
+	
+	.mCS-inset-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.75); }
+	
+	.mCS-inset-3.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.85); }
+	
+	.mCS-inset-3.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-inset-3.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba(0,0,0,0.9); }
+	
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.75); }
+	
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.85); }
+	
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
+	
+	/* ---------------------------------------- */ 

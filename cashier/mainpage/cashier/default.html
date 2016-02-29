@@ -1,0 +1,103 @@
+<div ng-controller="default_ctrl" style="height:100%">
+    <div class="page_main page" id="page_main" data-state="1">
+        <div class="sidebar mscrollbar mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar"><div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+            <div class="user">
+                <div class="logo"><img src="http://www.dqstone.net/assets/admin/img/logo_cashier.png" class="mCS_img_loaded"></div>
+                <div class="tab" id="user_tab">
+                    <a href="javascript:;" data-state="0" data-name="func" ng-click="selection = 'func';tab_func='tab_active';tab_filter='';" ng-init="selection = 'filter';tab_filter = 'tab_active'"  ng-class="tab_func" > 功能</a>
+                    <a href="javascript:;" data-state="1" data-name="filter" ng-click="selection = 'filter';tab_func='';tab_filter='tab_active';" ng-class="tab_filter">筛选</a>
+                </div>
+            </div>
+            <div class="animate-switch-container"
+                 ng-switch on="selection">
+                <div class="filter animate-switch" ng-switch-when="filter" id="filter">
+                    <div class="filter_list">
+                        <div class="box">
+                            <a href="javascript:;"   ng-click="areasClick(0)" data-state="0" ng-class="{filter_activ: currentAreas.id == 0}">全部</a>
+                            <a href="javascript:;"  ng-click="areasClick(data.id)" ng-repeat="data in filter_list" ng-class="{filter_activ: currentAreas.id == data.id}">{{data.name}}</a>
+                        </div>
+
+                    </div>
+                    <div class="box_switch">
+                        <a href="javascript:;" class="switch" data-type="isfull" data-val="0">
+                            <span>仅显示未上齐</span>
+
+                            <div class="switch_wrap">
+                                <div class="switch_mark"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="func animate-switch" ng-switch-when="func" id="func">
+                    <div class="box">
+                        <a href="javascript:;" id="btn_jiaoban" style="display:none">交班</a>
+                        <a href="javascript:;" id="btn_kaiban">开班</a>
+                        <a href="javascript:;" id="btn_logout">离开</a>
+                        <a href="javascript:;" id="btn_change_pwd">修改密码</a>
+                        <a href="admin/index.do" id="btn_change_glpt">管理平台</a>
+                    </div>
+                    <div class="box">
+                        <a href="javascript:;" id="btn_yuyue_add">添加预约</a>
+                        <a href="javascript:;" id="btn_yuyue_search">预约查询</a>
+                    </div>
+                    <div class="box">
+                        <a href="javascript:;" id="btn_card_search">会员查询</a>
+                        <a href="javascript:;" id="btn_card_open">会员开卡</a>
+                        <a href="javascript:;" id="btn_card_recharge">会员充值</a>
+                        <a href="javascript:;" id="btn_card_fill">会员补卡</a>
+                    </div>
+                    <div class="box">
+                        <a href="javascript:;" id="btn_device_open">设备管理</a>
+                    </div>
+                </div>
+            </div>
+
+        </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; height: 0px; top: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+        <div class="content">
+            <div class="desklist mscrollbar mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" id="desklist"
+                 style="height: 665px;">
+                <div id="mCSB_2" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;"
+                     tabindex="0">
+                    <div id="mCSB_2_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                         style="position:relative; top:0; left:0;" dir="ltr">
+                        <div class="item" data-id="desk.id" data-state="open" ng-repeat="desk in desk_list | filter:{state: '1'}" ng-click="deskClick(desk.id)">
+                            <div class="hd"><span class="name val_name">{{desk.name}}</span></div>
+                            <div class="info"><span class="val_ren">{{desk.customerAmount}}</span>人用餐&nbsp;&nbsp; <span class="val_time_open"
+                                                                                                  data-tm="2016-02-26 15:56:26.0">{{desk.time_run}}</span>分&nbsp;&nbsp;
+                                <span class="val_count_menu_complete">{{desk.count_menu_complete}}</span>/<span
+                                        class="val_count_menu">{{desk.count_menu}}</span><br> ￥<span class="val_price_pay">{{desk.price_pay}}</span>&nbsp;/&nbsp;￥<span
+                                        class="val_price">{{desk.price}}</span></div>
+                        </div>
+                        
+                        <div class="item" data-id="329" data-state="null" ng-repeat="desk in desk_list | filter:{state: '0'}" ng-click="deskClick(desk.id)">
+                            <div class="hd"><span class="name val_name">{{desk.name}}</span></div>
+                            <div class="info"><span class="text">未开台</span></div>
+                        </div>
+
+                    </div>
+                    <div id="mCSB_2_scrollbar_vertical"
+                         class="mCSB_scrollTools mCSB_2_scrollbar mCS-light mCSB_scrollTools_vertical"
+                         style="display: none;">
+                        <div class="mCSB_draggerContainer">
+                            <div id="mCSB_2_dragger_vertical" class="mCSB_dragger"
+                                 style="position: absolute; min-height: 30px; top: 0px; height: 0px;"
+                                 oncontextmenu="return false;">
+                                <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                            </div>
+                            <div class="mCSB_draggerRail"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="state">
+                <div class="state-wrap">
+                    当前收银员：<span>管理员</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    时间：<span id="glb_time">2016-03-01 17:27</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    总桌数：<span id="glb_count_total">17</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    未开台：<span id="glb_count_null">14</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    已开台：<span id="glb_count_open">3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

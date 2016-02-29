@@ -1,0 +1,196 @@
+<div ng-controller="deskPageCtrl" style="height:100%">
+    <div class="page_desk page" id="page_desk" data-state="1" data-id="329">
+        <div class="topbar">
+            <div class="ren">
+                <a href="javascript:;" class="btn_add" id="btn_desk_ren_add"><i class="iconfont icon-add"></i></a>
+                <span class="num" id="val_count_ren">0</span>
+                <a href="javascript:;" class="btn_minus" id="btn_desk_ren_minus"><i class="iconfont icon-minus"></i></a>
+            </div>
+            <div class="btns">
+                <a href="javascript:;" class="btn_back_main">返回</a>
+                <a href="javascript:;" id="btn_desk_dian">点餐</a>
+                <a href="javascript:;" id="btn_desk_swap">换台</a>
+                <a href="javascript:;" id="btn_desk_merge">合台</a>
+                <a href="javascript:;" id="btn_desk_clear">清台</a>
+            </div>
+        </div>
+        <div class="desk_main" id="desk_main" style="height: 565px;">
+            <div class="desk_sidebar mscrollbar mCustomScrollbar _mCS_3 mCS-autoHide mCS_no_scrollbar"><div id="mCSB_3" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_3_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                <div class="desk_info" id="desk_info">
+                    <div class="name"><span class="val_name">009</span></div>
+                    <div class="info">
+                        <div class="it">
+                            <div class="text">时间：</div>
+                            <div class="value"><span class="val_time_open">247</span>/<span class="val_time_run"></span>分钟</div>
+                        </div>
+                        <div class="it">
+                            <div class="text">上菜：</div>
+                            <div class="value"><span class="val_count_menu_complete">0</span>/<span class="val_count_menu">7</span></div>
+                        </div>
+                        <div class="it">
+                            <div class="text">支付：</div>
+                            <div class="value">￥<span class="val_price_pay">0.00</span>/￥<span class="val_price">225.00</span></div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="btn" id="btn_order_merge" style="display: block;">合并未支付订单</a>
+                </div>
+                <div class="desk_order" id="desk_order"><a href="javascript:;" class="item" data-id="a40890672390416fbd4cdc6cdf5928a3" data-ispay="0" data-state="1" data-paytype="2">					<span class="state">未结算</span>					<span class="source">收银</span>					<span class="time">10:35</span>					<span class="price"><span class="yuan">￥</span><span class="n">225.00</span></span>				</a></div>
+            </div><div id="mCSB_3_scrollbar_vertical" class="mCSB_scrollTools mCSB_3_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_3_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px; height: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+            <div class="order_pay mscrollbar mCustomScrollbar _mCS_4 mCS-autoHide" id="order_pay" data-id="a40890672390416fbd4cdc6cdf5928a3" style="display: block;"><div id="mCSB_4" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_4_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px;" dir="ltr">
+                <div class="payinfo">
+                    <div class="item">
+                        <div class="name">订单单号</div>
+                        <div class="val val_order_code">1201602290001</div>
+                    </div>
+                    <div class="item">
+                        <div class="name">订单金额</div>
+                        <div class="val">
+                            <div class="price"><span class="yuan">￥</span><span class="n val_price">225.00</span></div>
+                        </div>
+                    </div>
+                    <div class="item item_price_can_discount">
+                        <div class="name">可打折金额</div>
+                        <div class="val">
+                            <div class="price">
+                                <span class="yuan">￥</span><span class="n val_price_can_discount">205.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item_price_moling">
+                        <div class="name">抹零金额</div>
+                        <div class="val">
+                            <div class="price">
+                                <span class="yuan">￥</span><span class="n val_price_moling">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item_price_n">
+                        <div class="name">应收金额</div>
+                        <div class="val">
+                            <div class="price">
+                                <span class="yuan">￥</span><span class="n val_price_n">225.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item_price_z">
+                        <div class="name">找零金额</div>
+                        <div class="val">
+                            <div class="price"><span class="yuan">￥</span><span class="n val_price_z">-225.00</span></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">打折优惠</div>
+                        <div class="val val_discount">无优惠</div>
+                    </div>
+                    <div class="item">
+                        <div class="name">订单状态</div>
+                        <div class="val val_state">待确认</div>
+                    </div>
+                    <div class="item item_type" style="display: none;">
+                        <div class="name">支付方式</div>
+                        <div class="val val_paytype"></div>
+                    </div>
+                    <div class="item">
+                        <div class="name">点餐备注</div>
+                        <div class="val_remark">
+                            <textarea class="ipt_remark" placeholder="请输入点餐备注"></textarea>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <a href="javascript:;" class="btn" id="btn_order_print">厨打</a>
+                        <a href="javascript:;" class="btn" id="btn_order_recycle">废弃</a>
+                        <a href="javascript:;" class="btn" id="btn_order_resend" style="display: none;">反结账</a>
+                        <a href="javascript:;" class="btn" id="btn_order_predict">预结单</a>
+                    </div>
+                    <div class="foot_border"></div>
+                </div>
+                <div class="pay_tab" id="pay_discount">
+                    <div class="tab_head">
+                        <a href="javascript:;" data-state="1">折扣</a>
+                        <a href="javascript:;" data-state="0">减免</a>
+                        <a href="javascript:;" data-state="0">代金券</a>
+                    </div>
+                    <div class="tab_body">
+                        <div class="tab_item" data-state="1">
+                            <div class="ipt">
+                                <select class="ipt_discount_percent"><option value="0" data-auth="0" data-isp="1" data-isquan="0" data-value="100" selected="selected">无优惠</option><option value="2" data-auth="0" data-isp="1" data-isquan="0" data-value="90">9折</option><option value="4" data-auth="0" data-isp="1" data-isquan="0" data-value="0">赠送</option><option value="5" data-auth="0" data-isp="1" data-isquan="0" data-value="70">7折</option><option value="6" data-auth="1" data-isp="1" data-isquan="0" data-value="78">78折</option><option value="19" data-auth="0" data-isp="1" data-isquan="0" data-value="88">88折扣</option></select>
+                            </div>
+                        </div>
+                        <div class="tab_item" data-state="0">
+                            <div class="ipt">
+                                <select class="ipt_discount_nopercent"><option value="3" data-isp="0" data-isquan="0" data-auth="0" data-value="20" selected="selected">减免20</option><option value="10" data-isp="0" data-isquan="0" data-auth="0" data-value="40">减免40</option><option value="20" data-isp="0" data-isquan="0" data-auth="0" data-value="35">减免35</option><option value="21" data-isp="0" data-isquan="0" data-auth="0" data-value="100">减免100</option></select>
+                            </div>
+                        </div>
+                        <div class="tab_item" data-state="0">
+                            <div class="ipt">
+                                <select class="ipt_discount_quan"><option value="-1" data-money="0" data-isquan="1" selected="selected">添加代金券</option><option value="5" data-money="100.00" data-isquan="1">100代金券(本店)</option><option value="7" data-money="50.00" data-isquan="1">50代金券(本店)</option><option value="8" data-money="200.00" data-isquan="1">200代金券(本店)</option><option value="9" data-money="20.00" data-isquan="1">20代金券(本店)</option><option value="6" data-money="80.00" data-isquan="1">80代金券(美团)</option><option value="19" data-money="10.00" data-isquan="1">10元代金券(美团)</option><option value="15" data-money="300.00" data-isquan="1">300代金卷(糯米)</option><option value="17" data-money="0.01" data-isquan="1">一份代金券(大众点评)</option></select>
+                                <div class="list_quan"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_tab" id="pay_moling">
+                    <div class="tab_head">
+                        <a href="javascript:;" data-state="1">抹零</a>
+                    </div>
+                    <div class="tab_body">
+                        <div class="tab_item" data-state="1">
+                            <div class="ipt">
+                                <input type="text" value="0" class="ipt_pay_moling" placeholder="请输入抹零金额">
+                                <div class="set_money"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_tab pay_tab_v" id="pay_type">
+                    <div class="tab_head">
+                        <a href="javascript:;" data-state="1">现金</a>
+                        <a href="javascript:;" data-state="0">实体卡</a>
+                        <a href="javascript:;" data-state="0">信用卡</a>
+                        <a href="javascript:;" data-state="0">在线</a>
+                        <a href="javascript:;" data-state="0">团购</a>
+                    </div>
+                    <div class="tab_body">
+                        <div class="tab_item" data-state="1">
+                            <div class="ipt">
+                                <input type="text" value="" class="ipt_pay_money" placeholder="请输入金额">
+                                <div class="set_money"></div>
+                                <input type="text" value="" class="ipt_remark" placeholder="结算备注">
+                            </div>
+                            <a href="javascript:;" class="btn" id="btn_order_pay_cash"><i class="iconfont icon-money"></i>&nbsp;&nbsp;现金结算</a>
+                        </div>
+                        <div class="tab_item" data-state="0">
+                            <div class="ipt">
+                                <input type="text" value="" class="ipt_remark" placeholder="结算备注">
+                            </div>
+                            <a href="javascript:;" class="btn" id="btn_order_pay_readcard">读卡<span class="area_yue" style="display: none;">&nbsp;&nbsp;（余额：<span class="val_card_balance" data-id="0"></span>）</span></a>
+                            <a href="javascript:;" class="btn" id="btn_order_pay_card"><i class="iconfont icon-card"></i>&nbsp;&nbsp;实体卡结算</a>
+                        </div>
+                        <div class="tab_item" data-state="0">
+                            <div class="ipt">
+                                <input type="text" value="" class="ipt_pay_code" placeholder="请输入单号">
+                                <input type="text" value="" class="ipt_remark" placeholder="结算备注">
+                            </div>
+                            <a href="javascript:;" class="btn" id="btn_order_pay_bank"><i class="iconfont icon-card"></i>&nbsp;&nbsp;信用卡结算</a>
+                        </div>
+                        <div class="tab_item" data-state="0">
+                            <div class="ipt">
+                                <input type="text" value="" class="ipt_remark" placeholder="结算备注">
+                            </div>
+                            <a href="javascript:;" class="btn" id="btn_order_pay_wechat"><i class="iconfont icon-weixin"></i>&nbsp;&nbsp;微信支付结算</a>
+                        </div>
+                        <div class="tab_item" data-state="0">
+                            <div class="ipt">
+                                <select class="ipt_pay_tuan"><option value="2">美团</option><option value="3">饿了么</option><option value="4">糯米</option><option value="5">大众点评</option></select>
+                                <input type="text" value="" class="ipt_pay_money_tuan" placeholder="请输入团购价">
+                                <input type="text" value="" class="ipt_remark" placeholder="结算备注">
+                            </div>
+                            <a href="javascript:;" class="btn" id="btn_order_pay_tuan"><i class="iconfont icon-card"></i>&nbsp;&nbsp;团购结算</a>
+                        </div>
+                    </div>
+                </div>
+            </div><div id="mCSB_4_scrollbar_vertical" class="mCSB_scrollTools mCSB_4_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_4_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px; display: block; height: 359px; max-height: 555px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+            <div class="order_menu mscrollbar mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" id="order_menu"><div id="mCSB_5" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_5_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr"><div class="item" data-id="996" data-attr="342" data-is-weight="0" data-detail-id="0" data-weight="-1">				<div class="info">					<div class="name">芒果汁(不打折测试)</div>					<div class="price"><span class="yuan">￥</span><span class="n">20.00</span></div>					<div class="tags"></div>				</div>				<div class="count"><span class="val_count_complete">0</span>/<span class="val_count">1</span>份</div>				<div class="opt"><a href="javascript:;" class="btn_gift" data-count="1">赠菜</a><a href="javascript:;" class="btn_retreat" data-count="1" data-isturnoff="0">退菜</a></div>			</div><div class="item" data-id="57" data-attr="0" data-is-weight="0" data-detail-id="0" data-weight="-1">				<div class="info">					<div class="name">鲜橙汁</div>					<div class="price"><span class="yuan">￥</span><span class="n">30.00</span></div>					<div class="tags"></div>				</div>				<div class="count"><span class="val_count_complete">0</span>/<span class="val_count">1</span>份</div>				<div class="opt"><a href="javascript:;" class="btn_gift" data-count="1">赠菜</a><a href="javascript:;" class="btn_retreat" data-count="1" data-isturnoff="0">退菜</a></div>			</div><div class="item" data-id="992" data-attr="0" data-is-weight="0" data-detail-id="0" data-weight="-1">				<div class="info">					<div class="name">苹果葡萄汁</div>					<div class="price"><span class="yuan">￥</span><span class="n">35.00</span></div>					<div class="tags"></div>				</div>				<div class="count"><span class="val_count_complete">0</span>/<span class="val_count">5</span>份</div>				<div class="opt"><a href="javascript:;" class="btn_gift" data-count="5">赠菜</a><a href="javascript:;" class="btn_retreat" data-count="5" data-isturnoff="0">退菜</a></div>			</div></div><div id="mCSB_5_scrollbar_vertical" class="mCSB_scrollTools mCSB_5_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_5_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px; height: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+        </div>
+    </div>
+</div>

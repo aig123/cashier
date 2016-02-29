@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-03-28 03:32:03
+ * @version $Id$
+ */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  list-style:none;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: "微软雅黑";
+  color: #3e3a39;
+}
+* {
+  margin: 0;
+  list-style:none;
+  text-decoration: none;
+}
+a:hover {
+  transition: color 1s;
+  -moz-transition: color 1s; /* Firefox 4 */
+  -webkit-transition: color 1s; /* Safari 和 Chrome */
+  -o-transition: color 1s; /* Opera */
+}
+
+#wrap {
+  width: 100%;
+}
+
+#max-width {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1000;
+  top: 120px;
+}
+#max-width-a {
+  width: 1200px;
+  margin: 0 auto;
+}
+.section{
+  height: 100%;
+}
+
+
